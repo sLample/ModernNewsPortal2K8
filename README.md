@@ -1,6 +1,5 @@
 # ModernNewsPortal2K8
 Modern News Portal – Trang web tin tức phong cách hiện đại 2026 | Vue 3 + Tailwind CSS + Node.js Fullstack
-**Trang web tin tức phong cách hiện đại 2026** – Dự án Fullstack hoàn chỉnh.
 
 Một nền tảng tin tức sạch sẽ, tối giản, hỗ trợ **Dark/Light mode**, infinite scroll, reading progress, và trải nghiệm mobile-first. Được thiết kế để thể hiện kỹ năng **Fullstack Junior** chuyên nghiệp.
 
