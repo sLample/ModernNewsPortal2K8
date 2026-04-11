@@ -6,7 +6,7 @@ import { connectDB } from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import newsRoutes from './routes/newsRoutes.js';
 
-dotenv.config();
+dotenv.config({ path: "./.env.exmaple" });
 
 const app = express();
 

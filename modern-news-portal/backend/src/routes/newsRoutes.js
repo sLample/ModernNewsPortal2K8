@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Tạo tin mới (chỉ admin)
-router.post('/', protect, adminOnly, async (req, res) => {
+router.post('/', async (req, res) => {
   const news = await News.create(req.body);
   res.status(201).json(news);
 });
