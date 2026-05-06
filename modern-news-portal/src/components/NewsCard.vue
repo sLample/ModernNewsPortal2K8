@@ -6,16 +6,25 @@
     <span class="text-xs font-medium text-blue-600">{{ news.category }}</span>
     <h3 class="text-xl font-semibold mt-2 leading-tight group-hover:text-blue-600 transition">{{ news.title }}</h3>
     <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 line-clamp-3">{{ news.summary }}</p>
-    <p class="text-xs text-gray-500 mt-4">{{ news.date }}</p>
+    <p class="text-xs text-gray-500 mt-4">{{ formatDate(news.date) }}</p>
   </div>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router'
-defineProps({ news: Object })
 
+const props = defineProps({ news: Object })
 const router = useRouter()
+
 const goToDetail = () => {
-  router.push(`/article/${props.news.id}`)
+  router.push(`/article/${props.news._id}`)
+}
+
+const formatDate = (date) => {
+  return new Date(date).toLocaleDateString('vi-VN', {
+    day: '2-digit',
+    month: '2-digit', 
+    year: 'numeric'
+  })
 }
 </script>

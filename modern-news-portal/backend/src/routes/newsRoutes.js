@@ -18,9 +18,13 @@ router.get('/:id', async (req, res) => {
 });
 
 // Tạo tin mới (chỉ admin)
-router.post('/', async (req, res) => {
-  const news = await News.create(req.body);
-  res.status(201).json(news);
+router.post('/', protect, adminOnly, async (req, res) => {
+  try {
+    const news = await News.create(req.body);
+    res.status(201).json(news);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
 });
 
 export default router;
